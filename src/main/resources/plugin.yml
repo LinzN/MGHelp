@@ -1,0 +1,4 @@
+name: MGHelp
+main : de.linzn.mgHelp.Main
+version: ${project.version}
+author: Kekshaus
