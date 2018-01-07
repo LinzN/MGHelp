@@ -16,11 +16,6 @@ public class Help extends Command {
     public void execute(CommandSender sender, String[] args) {
         if (args.length >= 1) {
             if (args[0].equalsIgnoreCase("cubit")) {
-                if (args.length == 2 && args[1].equalsIgnoreCase("2")) {
-                    this.cubit2(sender);
-                    return;
-                }
-
                 this.cubit(sender);
                 return;
             }
@@ -66,11 +61,11 @@ public class Help extends Command {
         TextComponent forum = new TextComponent("§aUnser Forum: §dhttps://www.MineGaming.de");
         forum.setClickEvent(new ClickEvent(Action.OPEN_URL, "https://www.MineGaming.de"));
         forum.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT, (new ComponentBuilder("§dÖffne www.MineGaming.de")).create()));
-        sender.sendMessage(new TextComponent("§e§lMineGaming Hilfeseite"));
-        sender.sendMessage(new TextComponent("§eWillkommen auf der Übersicht der Hilfeseite!"));
-        sender.sendMessage(new TextComponent("§eDiese Seite gibt einen groben Überblick über unsere Befehle!"));
+        sender.sendMessage(new TextComponent("§e§lMineGaming Hilfe-System"));
+        sender.sendMessage(new TextComponent("§eWillkommen auf der Übersicht der Hilfeseiten!"));
+        sender.sendMessage(new TextComponent("§eDiese Seite gibt dir eine groben Überblick über unsere Befehle!"));
         sender.sendMessage(new TextComponent("§eBitte wähle hier das jeweilige Plugin aus."));
-        sender.sendMessage(new TextComponent("§a/help cubit  §e - Hilfe für unser GS Plugin (Nicht in der Lobby)"));
+        sender.sendMessage(new TextComponent("§a/help cubit  §e - Hilfe für unser GS Plugin"));
         sender.sendMessage(new TextComponent("§a/help mcmmo §e - Ansicht der mcMMO Befehle"));
         sender.sendMessage(new TextComponent("§a/help jobs §e - Befehle für die Jobs"));
         sender.sendMessage(new TextComponent("§a/help economy §e - Wie benutze ich das Geldsystem"));
@@ -83,28 +78,13 @@ public class Help extends Command {
     }
 
     private void cubit(CommandSender sender) {
-        sender.sendMessage(new TextComponent("§e§lHilfeseite: (Cubit Seite 1/2) (Akania)"));
-        sender.sendMessage(new TextComponent("§a/land kaufen §e - Kaufe ein freies GS"));
-        sender.sendMessage(new TextComponent("§a/land verkaufen §e - Verkaufe dein GS an den Server"));
-        sender.sendMessage(new TextComponent("§a/land add <Player> §e - Füge einen Freund auf dein GS hinzu"));
-        sender.sendMessage(new TextComponent("§a/land remove <Player> §e - Entferne einen Freund von einem GS"));
-        sender.sendMessage(new TextComponent("§a/land aufkaufen §e - Kaufe ein inaktives GS auf"));
-        sender.sendMessage(new TextComponent("§a/land abkaufen §e - Kaufe ein angebotenes GS"));
-        sender.sendMessage(new TextComponent("§a/land anbieten §e - Biete ein GS zum Verkauf an"));
-        sender.sendMessage(new TextComponent("§e/help cubit 2 §a Weiter auf Seite 2"));
+        sender.sendMessage(new TextComponent("§e§lHilfeseite: (Cubit Seite 1/1)"));
+        sender.sendMessage(new TextComponent("§eNur in Akania (/w akania):"));
+        sender.sendMessage(new TextComponent("§a/land help §e - Zeigt die Hilfeseiten vom Landsystem"));
+        sender.sendMessage(new TextComponent("§eNur in der Shopwelt (/w shops):"));
+        sender.sendMessage(new TextComponent("§a/shop help §e - Zeigt die Hilfeseiten vom Shopsystem"));
     }
 
-    private void cubit2(CommandSender sender) {
-        sender.sendMessage(new TextComponent("§e§lHilfeseite: (Cubit Seite 2/2) (Akania)"));
-        sender.sendMessage(new TextComponent("§a/land kick §e - Nichtmember vom Land entfernen"));
-        sender.sendMessage(new TextComponent("§a/land addall <Player> §e - Füge einen Freund auf alle GS hinzu"));
-        sender.sendMessage(new TextComponent("§a/land removeall <Player> §e - Entferne einen Freund von allen GS"));
-        sender.sendMessage(new TextComponent("§a/land help 2 §e - Zeigt Kaufen/Verkaufen Befehle"));
-        sender.sendMessage(new TextComponent("§a/land help 3 §e - Zeigt Freunde verwalten Befehle"));
-        sender.sendMessage(new TextComponent("§a/land help 4 §e - Zeigt Land verwalten Befehle"));
-        sender.sendMessage(new TextComponent("§a/land help 5 §e - Zeigt Biom verwalten Befehle"));
-        sender.sendMessage(new TextComponent("§e/help cubit §a Zurück auf Seite 1"));
-    }
 
     private void mcmmo(CommandSender sender) {
         sender.sendMessage(new TextComponent("§e§lHilfeseite: (mcMMO Seite 1/1)"));
@@ -125,6 +105,7 @@ public class Help extends Command {
     private void economy(CommandSender sender) {
         sender.sendMessage(new TextComponent("§e§lHilfeseite: (Economy Seite 1/1)"));
         sender.sendMessage(new TextComponent("§a/money §e - Zeigt deinen Kontostand"));
+        sender.sendMessage(new TextComponent("§a/money top §e - Zeigt die Topliste"));
         sender.sendMessage(new TextComponent("§a/money pay <Player> <Menge> §e - Überweist einem Spieler Mines"));
     }
 
