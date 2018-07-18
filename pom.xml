@@ -55,7 +55,7 @@
         </plugins>
     </build>
     <artifactId>MGHelp</artifactId>
-    <version>0.0.1-${build.number}</version>
+    <version>0.0.2-${build.number}</version>
     <groupId>de.linzn</groupId>
     <dependencyManagement>
         <dependencies>
